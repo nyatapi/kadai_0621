@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update]
-  
+
   def index
     @blogs = Blog.all
   end
@@ -35,6 +35,11 @@ class BlogsController < ApplicationController
     end
   end
 
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path, notice:"ブログを削除しました！"
+  end
+
   private
   def blog_params
     params.require(:blog).permit(:title, :content)
@@ -42,4 +47,5 @@ class BlogsController < ApplicationController
   def set_blog
     @blog = Blog.find(params[:id])
   end
+
 end
