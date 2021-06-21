@@ -10,6 +10,16 @@
   </head>
 
   <body>
+    <header>
+      <%= image_tag 'sns_twitter.png', class: "images" %>
+    </header>
+    <h1>ホーム</h1>
+    <p><%= notice %></p>
+
     <%= yield %>
+
+    <footer class="footer">
+      <p>nyatapi</p>
+    </footer>
   </body>
 </html>
